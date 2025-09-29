@@ -1,5 +1,5 @@
 # pt-TWAS
-![](/assets/images/electrocat.png)
+![](/Fig/FlowChart.png)
 RECKMON (REluCtant Kernel-based Modeling On Non-linearity) is a reluctant modeling framework tailored for high-dimensional genomic prediction. RECKMON reluctantly models main, second-order, and higher-order effects, leveraging an efficient kernel-based feature selection method to identify non-linear predictors with computational efficacy. 
 
 
