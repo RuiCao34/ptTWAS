@@ -1,5 +1,7 @@
 # pt-TWAS
+![](/assets/images/electrocat.png)
 RECKMON (REluCtant Kernel-based Modeling On Non-linearity) is a reluctant modeling framework tailored for high-dimensional genomic prediction. RECKMON reluctantly models main, second-order, and higher-order effects, leveraging an efficient kernel-based feature selection method to identify non-linear predictors with computational efficacy. 
+
 
 
 # Installation
@@ -17,7 +19,7 @@ library(ggplot2)
 
 set.seed(123)
 
-## initial parameters
+## Initialize parameters
 n_s = 1e2
 
 n_c = 1e1
@@ -54,7 +56,7 @@ ge_baseline = c(0.5,1)
 
 M = 2 # true gene expression curve is linear
 
-## initialize orthonormal splines
+## Initialize orthonormal splines
 
 order = 4
 
@@ -86,8 +88,8 @@ for(i in 2:order){
 
 ortho_splines = ortho_splines[1:M,1:M]
 
-## stage 1 regression
-### define coefficients
+## Stage 1 regression
+### Define coefficients
 beta_list = vector('list', length = 2)
 
 beta_list[[1]] = c(rep(beta[1], p_true), rep(0, p_null), rep(0,p_covar)) # the beta of y coordinate of the node
@@ -100,14 +102,14 @@ B_matrix = do.call("rbind", lapply(1:2, function(m){
   
 } ))
 
-### initialize genotype and covariate matrix
+### Initialize genotype and covariate matrix
 G = matrix(rbinom(n_s*p, size = 2, prob = maf), nrow = n_s)
 
 U = matrix(rnorm(n_s*p_covar), nrow = n_s)
 
 GU = cbind(G, U)
 
-### define individual gene expression function
+### Define individual gene expression function
 ge_curve = X = t_vec = Y = vector("list", length = n_s)
 
 for(subject in 1:n_s){
@@ -140,7 +142,7 @@ weights = rep(1, nrow(X))
 
 model_stage1 = ptTWAS_stage1(Y, G, U, id, t_vec, weights)
 
-## stage 2 using individual data
+## Stage 2 using individual data
 G_til = matrix(rbinom(n_step2*p, size = 2, prob = maf), nrow = n_step2)
 
 U_til = matrix(rnorm(n_step2*p_covar), nrow = n_step2)
@@ -167,7 +169,7 @@ Z = sapply(mu, function(mu_i){
   
 })
 
-### hypothesis tests
+### Hypothesis tests
 model_stage2 = ptTWAS_stage2_individual(Z, G_til, model_stage1, outcome = "binary")
 
 model_stage2$Global_pval # global p-value
@@ -242,7 +244,7 @@ ggplot() +
   
   theme_classic()
 
-## stage 2 using summary data
+## Stage 2 using summary data
 GWAS_beta_hat = GWAS_beta_se = rep(0, p)
 
 for(i in 1:p){
