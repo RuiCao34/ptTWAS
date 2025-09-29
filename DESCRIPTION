@@ -3,11 +3,9 @@ Type: Package
 Title: Pseudotime-depenent TWAS Framwork (pt-TWAS)
 Version: 0.1.0
 Authors@R: c(
-    person(
-      "Rui Cao", "Chunlin Li", "Tianzhong Yang"
-      email = "caorui3434@gmail.com",
-      role = c("cre", "aut", "aut")
-    )
+    person("Rui", "Cao", email = "caorui3434@gmail.com", role = c("cre", "aut")),
+    person("Chunlin", "Li", role = "aut"),
+    person("Tianzhong", "Yang", role = "aut")
   )
 Description: Using single-cell gene expression, we model the gene expression as a function of pseudotime and incorporate it
 	into conventional TWAS framework. Compared to bulk-tissue TWAS, pt-TWAS has higher resolution (i.e., cell-stage resolution)
