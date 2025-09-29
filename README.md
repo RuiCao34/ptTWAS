@@ -1,8 +1,7 @@
 # pt-TWAS
 ![](/Fig/FlowChart.png)
-RECKMON (REluCtant Kernel-based Modeling On Non-linearity) is a reluctant modeling framework tailored for high-dimensional genomic prediction. RECKMON reluctantly models main, second-order, and higher-order effects, leveraging an efficient kernel-based feature selection method to identify non-linear predictors with computational efficacy. 
 
-
+pt-TWAS is a novel pseudotime-dependent TWAS framework that incorporates single-cell transcriptomic data and disease GWAS data to infer causal genes at a cell-stage resolution.  Statistically, pt-TWAS is a two-stage functional regression framework. In the first stage, we use a function-on-scalar regression model to predict the single-cell gene expression trajectory using genetic variants, with a group-lasso penalty to impose SNP-wise sparsity. In the second stage, we test for an association between this imputed functional gene expression and a disease outcome. Specifically, we are interested in both a global null hypothesis and a secondary hypothesis, correponding to a global null effect and a pseudotime-invariant effect respectively. To infer the causal cell stage for disease, we also visualize simultaneous confidence band for the gene effect curve. As demonstrated in both our simulation and real data results, by modeling gene expression as a function of pseudotime, our method identifies dynamic and cell-stage-specific genetic effects that can be missed by bulk-tissue or pseudobulk approaches. This functional approach not only provides a finer-resolution map of when a gene's activity contributes to disease but can also increases statistical power by borrowing information across the entire cellular continuum. 
 
 # Installation
 devtools::install_github("RuiCao34/ptTWAS")
