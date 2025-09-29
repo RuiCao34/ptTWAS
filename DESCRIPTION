@@ -1,0 +1,20 @@
+Package: ptTWAS
+Type: Package
+Title: Pseudotime-depenent TWAS Framwork (pt-TWAS)
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Rui Cao", "Chunlin Li", "Tianzhong Yang"
+      email = "caorui3434@gmail.com",
+      role = c("cre", "aut", "aut")
+    )
+  )
+Description: Using single-cell gene expression, we model the gene expression as a function of pseudotime and incorporate it
+	into conventional TWAS framework. Compared to bulk-tissue TWAS, pt-TWAS has higher resolution (i.e., cell-stage resolution)
+	to identify disease genes. Its hypothesis test is powerful at examining the gene-disease association, while 
+	its confidence band inference can pinpoint the cell stage of association, that is, at which cell stage the gene expression
+	is associated with disease.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.3
