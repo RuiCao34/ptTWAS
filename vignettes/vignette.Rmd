@@ -1,5 +1,5 @@
 ---
-title: "vignette"
+title: "Vignette"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{vignette}
@@ -16,4 +16,7 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(ptTWAS)
+library(polynom)
+library(gglasso)
+library(ggplot2)
 ```
