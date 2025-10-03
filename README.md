@@ -6,7 +6,7 @@ pt-TWAS is a novel pseudotime-dependent TWAS framework that incorporates single-
 For inference, we are interested in both a global null hypothesis and a secondary hypothesis, correponding to a global null effect and a pseudotime-invariant effect respectively. In addition, to infer the causal cell stage for disease, we also visualize simultaneous confidence band for the gene effect curve. As demonstrated in both our simulation and real data results, by modeling gene expression as a function of pseudotime, our method identifies dynamic and cell-stage-specific genetic effects that can be missed by bulk-tissue or pseudobulk approaches. This functional approach not only provides a finer-resolution map of when a gene's activity contributes to disease but can also increases statistical power by borrowing information across the entire cellular continuum. 
 
 # Installation
-devtools::install_github("RuiCao34/ptTWAS")
+devtools::install_github("RuiCao34/ptTWAS", build_vignettes = TRUE)
 
 # Vignette
 To learn more about the package details, please check the vignette by calling the following code
